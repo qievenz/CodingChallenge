@@ -144,7 +144,7 @@
   <data name="Total" xml:space="preserve">
     <value>TOTAL</value>
   </data>
-  <data name="Triangulo" xml:space="preserve">
+  <data name="TrianguloEquilatero" xml:space="preserve">
     <value>Triángulo</value>
   </data>
 </root>

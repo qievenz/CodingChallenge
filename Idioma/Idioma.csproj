@@ -47,7 +47,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Castellano.resx</DependentUpon>
     </Compile>
-    <Compile Include="Idioma.cs" />
+    <Compile Include="IdiomaManager.cs" />
     <Compile Include="Resources\Ingles.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -144,9 +144,9 @@ namespace Idioma.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Triángulo.
         /// </summary>
-        internal static string Triangulo {
+        internal static string TrianguloEquilatero {
             get {
-                return ResourceManager.GetString("Triangulo", resourceCulture);
+                return ResourceManager.GetString("TrianguloEquilatero", resourceCulture);
             }
         }
     }

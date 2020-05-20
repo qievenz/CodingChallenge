@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Idioma", "Idioma\Idioma.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingChallenge.Data.Tests", "CodingChallenge.Data.Tests\CodingChallenge.Data.Tests.csproj", "{CAC2DC96-0AEF-48C0-A6E4-07EF206B860A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Figura", "Figura\Figura.csproj", "{CA459B2A-F942-4EB7-860D-4940DFCFA3FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CAC2DC96-0AEF-48C0-A6E4-07EF206B860A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAC2DC96-0AEF-48C0-A6E4-07EF206B860A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAC2DC96-0AEF-48C0-A6E4-07EF206B860A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA459B2A-F942-4EB7-860D-4940DFCFA3FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA459B2A-F942-4EB7-860D-4940DFCFA3FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA459B2A-F942-4EB7-860D-4940DFCFA3FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA459B2A-F942-4EB7-860D-4940DFCFA3FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

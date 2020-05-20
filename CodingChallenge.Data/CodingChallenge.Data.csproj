@@ -59,6 +59,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Figura\Figura.csproj">
+      <Project>{ca459b2a-f942-4eb7-860d-4940dfcfa3fd}</Project>
+      <Name>Figura</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Idioma\Idioma.csproj">
       <Project>{35fa41c9-dfab-4165-a068-c1fb44ae80a5}</Project>
       <Name>Idioma</Name>
