@@ -10,6 +10,6 @@ Implementa una base de datos con una tabla de Figuras, en la cual las primeras d
 
 Permite agregar nuevas figuras y nuevas ecuaciones al reporte (por ej el volumen de un cubo formado por los lados de un cuadrado). 
 
-Permite trabajar con figuras cuyos lados no son iguales, recibiendo un diccionario de variable:valor que luego es reemplazado en la funcion para realizar el calculo.
+Permite trabajar con figuras cuyos lados no son iguales, recibiendo un diccionario de variable:valor que luego es reemplazado en la ecuacion para realizar el calculo.
 
 Para crear una nueva figura o agregar una ecuacion hay que realizar la modificacion correspondiente a la tabla y agregar las traducciones de la nueva figura o la nueva ecuacion a los archivos de recurso en el proyecto de Idioma.
