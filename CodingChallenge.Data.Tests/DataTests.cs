@@ -174,5 +174,26 @@ namespace CodingChallenge.Data.Tests
 
             Assert.AreEqual("<h1>Reporte de Formas</h1>1 Cuadrado con volumen | Area 9 | Perimetro 12 | Volumen 27 <br/>TOTAL:<br/>1 formas Area 9 Perimetro 12 Volumen 27", resumen);
         }
+
+        [TestCase]
+        public void TestResumenListaConYSinEcuacionesIngles()
+        {
+            var formas = new List<FormaGeometrica>
+            {
+                new FormaGeometrica(7, 12),
+                new FormaGeometrica(6, 12),
+                new FormaGeometrica(2, 4),
+                new FormaGeometrica(7, 7.3m),
+                new FormaGeometrica(1, 2),
+                new FormaGeometrica(6, 4.2m),
+                new FormaGeometrica(7, 5)
+            };
+
+            var resumen = FormaGeometrica.Imprimir(formas, 2);
+
+            Assert.AreEqual("<h1>Shapes report</h1>3 Square with volumes | Area 222,29 | Perimeter 97,2 | Volume 2242,02 <br/>2 Pentagons | Perimeter 81 <br/>1 Triangle | Area 6,93 | Perimeter 12 <br/>1 Square | Area 4 | Perimeter 8 <br/>TOTAL:<br/>7 shapes Area 233,22 Perimeter 198,2 Volume 2242,02", resumen);
+        }
+
+        
     }
 }
