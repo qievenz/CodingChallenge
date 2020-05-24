@@ -22,7 +22,7 @@ namespace Idioma.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Castellano {
+    public class Castellano {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Idioma.Resources {
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Idioma.Resources.Castellano", typeof(Castellano).Assembly);
@@ -51,7 +51,7 @@ namespace Idioma.Resources {
         ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Idioma.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Area.
         /// </summary>
-        internal static string Area {
+        public static string Area {
             get {
                 return ResourceManager.GetString("Area", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace Idioma.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Círculo.
         /// </summary>
-        internal static string Circulo {
+        public static string Circulo {
             get {
                 return ResourceManager.GetString("Circulo", resourceCulture);
             }
@@ -81,16 +81,25 @@ namespace Idioma.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Cuadrado.
         /// </summary>
-        internal static string Cuadrado {
+        public static string Cuadrado {
             get {
                 return ResourceManager.GetString("Cuadrado", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Cuadrado con volumen.
+        /// </summary>
+        public static string CuadradoConVolumen {
+            get {
+                return ResourceManager.GetString("CuadradoConVolumen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Forma.
         /// </summary>
-        internal static string Forma {
+        public static string Forma {
             get {
                 return ResourceManager.GetString("Forma", resourceCulture);
             }
@@ -99,34 +108,61 @@ namespace Idioma.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Forma desconocida.
         /// </summary>
-        internal static string FormaDesconocida {
+        public static string FormaDesconocida {
             get {
                 return ResourceManager.GetString("FormaDesconocida", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Funcion no establecida.
+        /// </summary>
+        public static string FuncionNoEstablecida {
+            get {
+                return ResourceManager.GetString("FuncionNoEstablecida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Lista vacía de formas!.
         /// </summary>
-        internal static string ListaVacia {
+        public static string ListaVacia {
             get {
                 return ResourceManager.GetString("ListaVacia", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Pentagono.
+        /// </summary>
+        public static string Pentagono {
+            get {
+                return ResourceManager.GetString("Pentagono", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Perimetro.
         /// </summary>
-        internal static string Perimetro {
+        public static string Perimetro {
             get {
                 return ResourceManager.GetString("Perimetro", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Rectangulo.
+        /// </summary>
+        public static string Rectangulo {
+            get {
+                return ResourceManager.GetString("Rectangulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Reporte de Formas.
         /// </summary>
-        internal static string ReporteFormas {
+        public static string ReporteFormas {
             get {
                 return ResourceManager.GetString("ReporteFormas", resourceCulture);
             }
@@ -135,18 +171,36 @@ namespace Idioma.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a TOTAL.
         /// </summary>
-        internal static string Total {
+        public static string Total {
             get {
                 return ResourceManager.GetString("Total", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Trapecio.
+        /// </summary>
+        public static string Trapecio {
+            get {
+                return ResourceManager.GetString("Trapecio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Triángulo.
         /// </summary>
-        internal static string TrianguloEquilatero {
+        public static string TrianguloEquilatero {
             get {
                 return ResourceManager.GetString("TrianguloEquilatero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Volumen.
+        /// </summary>
+        public static string Volumen {
+            get {
+                return ResourceManager.GetString("Volumen", resourceCulture);
             }
         }
     }

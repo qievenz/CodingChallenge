@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
 using System.Resources;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Idioma
 {
@@ -14,22 +10,17 @@ namespace Idioma
 
         public IdiomaManager(int idioma)
         {
-            if (idioma < 1)
+            //Si el idioma ingresado no es valido se setea el predeterminado
+            foreach (SettingsProperty currentProperty in Properties.Settings.Default.Properties)
             {
-                SetResource();
-                return;
-            }
-            else
-            {
-                foreach (SettingsProperty currentProperty in Properties.Settings.Default.Properties)
+                if (currentProperty.DefaultValue.ToString() == idioma.ToString())
                 {
-                    if (currentProperty.DefaultValue.ToString() == idioma.ToString())
-                    {
-                        SetResource(currentProperty.Name);
-                        return;
-                    }
+                    SetResource(currentProperty.Name);
+                    return;
                 }
             }
+            SetResource();
+            return;
         }
 
         private void SetResource(string resource = "")
@@ -50,10 +41,12 @@ namespace Idioma
         public string GetString(string value)
         {
             string resultado = "";
-            resultado = this._resMana.GetString(value);
-            if (resultado == null)
+            
+            resultado = this._resMana.GetString(value.Trim());
+            
+            if (string.IsNullOrEmpty(resultado))
             {
-                throw new Exception($"Traduccion no definida en {_resMana.BaseName}: {value}");
+                throw new Exception($"Traduccion no definida en {_resMana.BaseName}: {value.Trim()}");
             }
             return resultado;
         }

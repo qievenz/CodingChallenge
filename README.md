@@ -1,32 +1,15 @@
+### Proyecto Idioma
+El proyecto permite gestionar el idioma para todo el proyecto que lo invoca recibiendo el id del idioma a utilizar.
 
-# InvertirOnline.com Coding Challenge
+Para agregar un nuevo idioma hay que crear el archivo de recurso con las traducciones y agregar el idioma con su ID al archivo de configuracion.
 
-Bienvenido!
+### Proyecto Figura
+Identifica la figura y resuelve las ecuaciones seteadas en el momento de la creacion del objeto.
 
-Nos encontramos en la búsqueda de desarrolladores .NET para que se incorporen a nuestro equipo. Después de múltiples procesos de selección, llegamos a la conclusión de que el código habla por si mismo. Con lo cual si te sentís dispuesto a afrontar el desafío, por favor tomate un rato para jugar con el problema y resolverlo.
+Implementa una base de datos con una tabla de Figuras, en la cual las primeras dos columnas son identificatorias (ID y Nombre) y a partir de la tercera en adelante se setean las ecuaciones. 
 
-### Cómo participar del proceso?
+Permite agregar nuevas figuras y nuevas ecuaciones al reporte (por ej el volumen de un cubo formado por los lados de un cuadrado). 
 
-Abajo detallamos el problema a resolver, cuando consideres que está resuelto, **no** envíes pull request. Enviá un mail a busquedas.it@invertironline.com con tu resolución (con un link de descarga al repositorio de tu preferencia), y si tenés algún comentario sobre tu implementación, también podés agregarlo ahí.
+Permite trabajar con figuras cuyos lados no son iguales, recibiendo un diccionario de variable:valor que luego es reemplazado en la funcion para realizar el calculo.
 
-### El problema
-
-Tenemos un método que genera un reporte en base a una colección de formas geométricas, procesando algunos datos para presentar información extra. La firma del método es:
-
-```csharp
-public static string Imprimir(List<FormaGeometrica> formas, int idioma)
-```
-
-Al mismo tiempo, encontramos muy díficil el poder agregar o bien una nueva forma geométrica, o imprimir el reporte en otro idioma. Nos gustaría poder dar soporte para que el usuario pueda agregar otros tipos de formas u obtener el reporte en otros idiomas, pero extender la funcionalidad del código es muy doloroso. ¿Nos podrías dar una mano a refactorear la clase FormaGeometrica? Dentro del código encontrarás un TODO con nuevos requerimientos a satisfacer una vez completada la refactorización.
-
-Acompañando al proyecto encontrarás una serie de tests unitarios (librería NUnit) que describen el comportamiento del método Imprimir. **Se puede modificar cualquier cosa del código y de los tests, con la única condición que los tests deben pasar correctamente al entregar la solución.** 
-
-Se agradece también la inclusión de nuevos tests unitarios para validar el comportamiento de la nueva funcionalidad agregada.
-
-### Cómo funciona
-
-Lo que te encontrás al levantar la .sln es una librería con el objeto de negocio FormaGeometrica, y un pequeño proyecto con test unitarios sobre el método de impresión de reporte.
-
-La resolución es libre y cómo encarar el problema queda en el criterio de quien lo resuelva!
-
-**¡¡Buena suerte!!**
+Para crear una nueva figura o agregar una ecuacion hay que realizar la modificacion correspondiente a la tabla y agregar las traducciones de la nueva figura o la nueva ecuacion a los archivos de recurso en el proyecto de Idioma.

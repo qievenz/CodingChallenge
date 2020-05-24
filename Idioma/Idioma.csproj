@@ -69,11 +69,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Castellano.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Castellano.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Ingles.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Ingles.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>

@@ -126,17 +126,29 @@
   <data name="Cuadrado" xml:space="preserve">
     <value>Cuadrado</value>
   </data>
+  <data name="CuadradoConVolumen" xml:space="preserve">
+    <value>Cuadrado con volumen</value>
+  </data>
   <data name="Forma" xml:space="preserve">
     <value>Forma</value>
   </data>
   <data name="FormaDesconocida" xml:space="preserve">
     <value>Forma desconocida</value>
   </data>
+  <data name="FuncionNoEstablecida" xml:space="preserve">
+    <value>Funcion no establecida</value>
+  </data>
   <data name="ListaVacia" xml:space="preserve">
     <value>Lista vacía de formas!</value>
   </data>
+  <data name="Pentagono" xml:space="preserve">
+    <value>Pentagono</value>
+  </data>
   <data name="Perimetro" xml:space="preserve">
     <value>Perimetro</value>
+  </data>
+  <data name="Rectangulo" xml:space="preserve">
+    <value>Rectangulo</value>
   </data>
   <data name="ReporteFormas" xml:space="preserve">
     <value>Reporte de Formas</value>
@@ -144,7 +156,13 @@
   <data name="Total" xml:space="preserve">
     <value>TOTAL</value>
   </data>
+  <data name="Trapecio" xml:space="preserve">
+    <value>Trapecio</value>
+  </data>
   <data name="TrianguloEquilatero" xml:space="preserve">
     <value>Triángulo</value>
+  </data>
+  <data name="Volumen" xml:space="preserve">
+    <value>Volumen</value>
   </data>
 </root>

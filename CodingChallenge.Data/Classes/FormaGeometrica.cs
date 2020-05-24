@@ -10,25 +10,30 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Resources;
 using System.Text;
 using Idioma;
-using Figura;
+using Figura.Controllers;
 
 namespace CodingChallenge.Data.Classes
 {
-    public class FormaGeometrica
+    public class FormaGeometrica 
     {
-        private readonly decimal _lado;
+        private readonly Dictionary<string, decimal> _lado;
+        private static IdiomaManager _idiomaManager;
 
         public int Tipo { get; set; }
-
         public FormaGeometrica(int tipo, decimal ancho)
         {
+            _lado = new Dictionary<string, decimal>();
+            Tipo = tipo;
+            _lado.Add("A", ancho);
+        }
+        public FormaGeometrica(int tipo, Dictionary<string, decimal> ancho)
+        {
+            _lado = new Dictionary<string, decimal>();
             Tipo = tipo;
             _lado = ancho;
         }
-        private static IdiomaManager _idiomaManager;
         public static string Imprimir(List<FormaGeometrica> formas, int idioma)
         {
             var sb = new StringBuilder();
@@ -45,10 +50,10 @@ namespace CodingChallenge.Data.Classes
                 // HEADER
                 sb.Append("<h1>" + _idiomaManager.GetString("ReporteFormas") + "</h1>");
 
-                var listaFormas = new List<Forma>();
+                var listaFormas = new List<FiguraController>();
                 for (var i = 0; i < formas.Count; i++)
                 {
-                    var forma = new Forma(formas[i].Tipo, formas[i]._lado);
+                    var forma = new FiguraController(formas[i].Tipo, formas[i]._lado);
                     if (forma.Nombre == null)
                     {
                         throw new Exception(_idiomaManager.GetString("FormaDesconocida"));
@@ -60,29 +65,48 @@ namespace CodingChallenge.Data.Classes
 
                 // FOOTER
                 sb.Append(_idiomaManager.GetString("Total") + ":<br/>");
-                sb.Append(listaFormas.Count().ToString() + " " + _idiomaManager.GetString("Forma").ToLower() + "s ");
-                sb.Append(_idiomaManager.GetString("Perimetro") + " " + listaFormas.Sum(item => item.Perimetro).ToString("#.##") + " ");
-                sb.Append(_idiomaManager.GetString("Area") + " " + listaFormas.Sum(item => item.Area).ToString("#.##"));
-
+                sb.Append(listaFormas.Count().ToString() + " " + _idiomaManager.GetString("Forma").ToLower() + "s");
+                //Recorrer formulas para la sumatoria del total de las formas
+                foreach (var formula in listaFormas.FirstOrDefault().Resultados.Keys)
+                {
+                    var total = listaFormas.Where(w => w.Resultados[formula.ToString()] > 0).Sum(s => Convert.ToDecimal(s.Resultados[formula.ToString()]));
+                    if (total > 0)
+                    {
+                        sb.Append(" ");
+                        var valorResultado = $"{Math.Round(total, 2):#.##}";
+                        sb.Append(_idiomaManager.GetString(formula.ToString()) + " " + valorResultado);
+                    }
+                }
             }
-
             return sb.ToString();
         }
-        private static string ObtenerLineas(List<Forma> listaFormas)
+        private static StringBuilder ObtenerLineas(List<FiguraController> listaFormas)
         {
-            string resultado = string.Empty;
+            StringBuilder resultado = new StringBuilder(); ;
             if (listaFormas.Count > 0)
             {
+                //Recorrer tipos de formas
                 foreach (var line in listaFormas.GroupBy(l => l.Tipo)
                         .Select(group => new {
                             Tipo = group.Key,
                             Count = group.Count(),
                             Nombre = group.First().Nombre,
-                            TotalArea = group.Sum(a => a.Area),
-                            TotalPerimetro = group.Sum(p => p.Perimetro)
+                            Resultados = group.Select(a=> a.Resultados)
                         }))
                 {
-                    resultado += $"{line.Count} {(line.Count == 1 ? _idiomaManager.GetString(line.Nombre) : (_idiomaManager.GetString(line.Nombre) + "s"))} | {_idiomaManager.GetString("Area")} {Math.Round(line.TotalArea,2):#.##} | {_idiomaManager.GetString("Perimetro")} {Math.Round(line.TotalPerimetro,2):#.##} <br/>";
+                    resultado.Append($"{line.Count} {(line.Count == 1 ? _idiomaManager.GetString(line.Nombre) : (_idiomaManager.GetString(line.Nombre) + "s"))}");
+                    //Recorrer formulas para la sumatoria por tipo de forma
+                    foreach (var formula in line.Resultados.FirstOrDefault().Keys)
+                    {
+                        var total = line.Resultados.Where(w => Convert.ToDecimal(w[formula.ToString()]) > 0).Sum(s => Convert.ToDecimal(s[formula.ToString()]));
+                        if (total > 0)
+                        {
+                            resultado.Append(" | ");
+                            var valorResultado = $"{Math.Round(total, 2):#.##}";
+                            resultado.Append($"{_idiomaManager.GetString(formula.ToString())} {valorResultado}");
+                        }
+                    }
+                    resultado.Append(" <br/>");
                 }
             }
             return resultado;

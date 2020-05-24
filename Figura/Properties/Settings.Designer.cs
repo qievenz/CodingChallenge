@@ -70,5 +70,17 @@ namespace Figura.Properties {
                 this["Trapecio"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public string Rectangulo {
+            get {
+                return ((string)(this["Rectangulo"]));
+            }
+            set {
+                this["Rectangulo"] = value;
+            }
+        }
     }
 }
